@@ -1,0 +1,17 @@
+/* 
+    Document   : styles
+    Created on : 18.02.2013, 03:43:17
+    Author     : Alexej
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+input[type="button"]{
+    font-size:65px;
+    width:80px
+
+  
+}
+input[type="text"]{
+    font-size:100px;
+}

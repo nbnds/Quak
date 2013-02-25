@@ -10,60 +10,28 @@ and open the template in the editor.
         <link type="text/css" rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="out"></div>
-        <div>
-        <input type="text" size="13"><br/>
-<input type="button" value="Q">
-<input type="button" value="W">
-<input type="button" value="E">
-<input type="button" value="R">
-<input type="button" value="T">
-<input type="button" value="Z">
-<input type="button" value="U">
-<input type="button" value="I">
-<input type="button" value="O">
-<input type="button" value="P">
-<input type="button" value="&Uuml;">
-</div>
 
-        <div>
-<input type="button" value="A">
-<input type="button" value="S">
-<input type="button" value="D">
-<input type="button" value="F">
-<input type="button" value="G">
-<input type="button" value="H">
-<input type="button" value="J">
-<input type="button" value="K">
-<input type="button" value="L">
-<input type="button" value="&Ouml;">
-<input type="button" value="&Auml;">
-</div><div>
-<input type="button" value="Y">
-<input type="button" value="X">
-<input type="button" value="C">
-<input type="button" value="V">
-<input type="button" value="B">
-<input type="button" value="N">
-<input type="button" value="M">
-<input type="button" value="&szlig;">
         <script type="text/javascript">
-            var button = document.querySelectorAll("input");
-            button[1].addEventListener("click",clickHandler,false);
-            button[2].addEventListener("click",clickHandler,false);
-            function playsound(){
-                
-             var sounds = ["au/q.wav","au/w.wav"];
-		
-		
-		MyAudio = new Audio(sounds[0]);
-                MyAudio.play();
-       
-         }
-         
-         function clickHandler(){
-             playsound();
-         }
+            var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+           
+            var cnt=0;
+            
+    do{  
+        
+    document.write("<button id='bt"+cnt+"'>"+letters[Math.floor(Math.random()*letters.length)]+"</button>&nbsp;");
+    var button = document.querySelector("#bt"+cnt);
+        button.addEventListener("click", clickHandler, false);
+    cnt++;
+    }while(cnt<3);
+    document.write("<br><input type='button' value='↻' onClick='window.location.reload()'>");
+    function clickHandler(){
+        playsound(this.innerHTML);
+    }
+    function playsound(letter){
+        var audio = document.createElement("audio");
+        audio.src = "au/"+letter+".wav";
+        audio.play();
+    }
         </script>
 </body>
 </html>

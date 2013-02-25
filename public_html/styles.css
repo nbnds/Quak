@@ -5,7 +5,9 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
+body{
+    font-size: 90pt;
+}
 input[type="button"]{
     font-size:65px;
     width:80px
@@ -14,4 +16,12 @@ input[type="button"]{
 }
 input[type="text"]{
     font-size:100px;
+}
+button{
+   
+    color: brown;
+    font-family: "Helvetica";
+    width:90px;
+    height:140px;
+    font-size: 60pt;
 }
